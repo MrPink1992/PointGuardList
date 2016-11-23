@@ -28,15 +28,15 @@ public class ShowPointguardActivity extends AppCompatActivity {
         TextView viewAssists= (TextView) findViewById(R.id.textViewAssists);
 
         viewName.setText(pointGuard.getName());
-        viewAge.setText(String.valueOf(pointGuard.getAge()));
-        viewHeight.setText(String.valueOf(pointGuard.getHeight()));
-        viewWeight.setText(String.valueOf(pointGuard.getWeight()));
-        viewAssists.setText(String.valueOf(pointGuard.getAssistsPerGame()));
+        viewAge.setText("Age: " + String.valueOf(pointGuard.getAge()));
+        viewHeight.setText("Height: " + String.valueOf(pointGuard.getHeight()));
+        viewWeight.setText("Weight: " + String.valueOf(pointGuard.getWeight()));
+        viewAssists.setText("Assists per Game: " + String.valueOf(pointGuard.getAssistsPerGame()));
 
     }
 
     public void showURL(View view) {
-        // Map point based on address
+
         Uri webSite = Uri.parse(pointGuard.getUrl());
         Intent mapIntent = new Intent(Intent.ACTION_VIEW, webSite);
         startActivity(mapIntent);
